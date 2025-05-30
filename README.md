@@ -15,3 +15,5 @@ exit<br>
 exit<br>
 docker exec -it connect /bin/bash<br>
 curl https://maven.xwiki.org/externals/com/oracle/jdbc/ojdbc8/12.2.0.1/ojdbc8-12.2.0.1.jar -o ojdbc8-12.2.0.1.jar<br>
+exit<br>
+docker restart connect<br>

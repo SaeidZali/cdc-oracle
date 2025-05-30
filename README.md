@@ -10,3 +10,4 @@ curl https://raw.githubusercontent.com/SaeidZali/kafka-connect-oracle/refs/heads
 exit<br>
 docker exec -it oracle bash -c 'sleep 1; sqlplus Debezium/dbz@localhost:1521/orclpdb1'<br>
 SELECT * FROM CUSTOMERS;<br>
+docker exec -it connect /bin/bash<br>

@@ -1,4 +1,4 @@
-arrangement by Hossein Einabadi,Majid Peykani and Saeed Zali<br>
+Arrangement by Hossein Einabadi,Majid Peykani and Saeed Zali<br>
 1.in wsl<br>
 2.git clone https://github.com/SaeidZali/kafka-connect-oracle.git<br>
 3.docker login container-registry.oracle.com<br>

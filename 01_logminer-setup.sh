@@ -6,7 +6,7 @@ export ORACLE_SID
 sqlplus /nolog <<- EOF
 	CONNECT sys/top_secret AS SYSDBA
 	alter system set db_recovery_file_dest_size = 10G;
-	alter system set db_recovery_file_dest = '/opt/oracle/oradata/recovery_area' scope=spfile;
+	alter system set db_recovery_file_dest = '/opt/oracle/oradata/recovery_area';
 	shutdown immediate
 	startup mount
 	alter database archivelog;
@@ -15,7 +15,7 @@ sqlplus /nolog <<- EOF
 	archive log list
 	exit;
 EOF
-
+# alter system set db_recovery_file_dest = '/opt/oracle/oradata/recovery_area' scope=spfile;
 # Enable LogMiner required database features/settings
 sqlplus sys/top_secret@//localhost:1521/ORCLCDB as sysdba <<- EOF
   ALTER DATABASE ADD SUPPLEMENTAL LOG DATA;

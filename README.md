@@ -1,4 +1,4 @@
-arrangement by Hossein Einabadi,Majid Peykani and Saeed Zali 
+arrangement by Hossein Einabadi,Majid Peykani and Saeed Zali<br>
 in wsl<br>
 docker login container-registry.oracle.com<br>
 docker pull container-registry.oracle.com/database/enterprise:21.3.0.0<br>

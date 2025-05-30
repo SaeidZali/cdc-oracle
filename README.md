@@ -1,5 +1,5 @@
 Arrangement by Hossein Einabadi,Majid Peykani and Saeed Zali<br>
-1.in wsl<br>
+1.in wsl of windows<br>
 2.git clone https://github.com/SaeidZali/kafka-connect-oracle.git<br>
 3.docker login container-registry.oracle.com<br>
 4.docker pull container-registry.oracle.com/database/enterprise:21.3.0.0<br>

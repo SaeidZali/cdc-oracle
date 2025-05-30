@@ -1,4 +1,4 @@
 in wsl<br>
-docker login container-registry.oracle.com
-docker pull container-registry.oracle.com/database/enterprise:21.3.0.0
-docker compose up --detach
+docker login container-registry.oracle.com<br>
+docker pull container-registry.oracle.com/database/enterprise:21.3.0.0<br>
+docker compose up --detach<br>

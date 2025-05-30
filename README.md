@@ -19,3 +19,6 @@ curl https://maven.xwiki.org/externals/com/oracle/jdbc/ojdbc8/12.2.0.1/ojdbc8-12
 exit<br>
 docker restart connect<br>
 curl -X POST -H "Content-Type: application/json" -d '{ "name": "oracle-customer-source-connector-00", "config": { "connector.class": "io.debezium.connector.oracle.OracleConnector", "database.hostname": "oracle", "database.port": "1521", "database.user": "c##dbzuser", "database.password": "dbz", "database.server.name": "test", "database.history.kafka.topic": "history", "database.dbname": "ORCLCDB", "database.connection.adapter": "LogMiner", "database.history.kafka.bootstrap.servers": "kafka:9092", "table.include.list": "DEBEZIUM.CUSTOMERS", "database.schema": "DEBEZIUM", "database.pdb.name": "ORCLPDB1", "snapshot.mode": "schema_only", "include.schema.changes": "true", "key.converter": "io.confluent.connect.avro.AvroConverter", "value.converter": "io.confluent.connect.avro.AvroConverter", "key.converter.schema.registry.url": "http://schema-registry:8081", "value.converter.schema.registry.url": "http://schema-registry:8081" } }' http://localhost:8083/connectors<br>
+curl -s "http://localhost:8083/connectors?expand=info&expand=status" | \
+jq '. | to_entries[] | [ .value.info.type, .key, .value.status.connector.state,.value.status.tasks[].state,.value.info.config."connector.class"]|join(":|:")' | \
+column -s : -t| sed 's/\"//g'| sort<br>

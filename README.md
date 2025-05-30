@@ -22,3 +22,5 @@ arrangement by Hossein Einabadi,Majid Peykani and Saeed Zali<br>
 21.curl -s "http://localhost:8083/connectors?expand=info&expand=status" | \
 jq '. | to_entries[] | [ .value.info.type, .key, .value.status.connector.state,.value.status.tasks[].state,.value.info.config."connector.class"]|join(":|:")' | \
 column -s : -t| sed 's/\"//g'| sort<br>
+22.you should see<br>
+source | oracle-customer-source-connector-00 | RUNNING | RUNNING | io.debezium.connector.oracle.OracleConnector<br>
